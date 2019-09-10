@@ -1,11 +1,14 @@
-class EmailParser 
-  attr_accessor :Emails 
-  
-  def initialize(csv_emails)
-    @csv_emails = csv_emails
-  end 
+class EmailParser
+attr_accessor :emails 
 
-  def parse 
-    puts splitEmail = csv_emails.split.collect {|address| address.split(',')}
-  end
+def initialize(emails)
+  @emails = emails
 end 
+
+def parse
+  puts splitEmail = emails.split.collect {|address| address.split(',')} 
+  returnArr = splitEmail.flatten.uniq
+  returnArr
+end
+
+end
