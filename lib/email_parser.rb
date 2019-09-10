@@ -1,14 +1,14 @@
 class EmailParser
-attr_accessor :emails 
-
-def initialize(emails)
-  @emails = emails
-end 
-
-def parse
-  puts splitEmail = emails.split.collect {|address| address.split(',')} 
-  returnArr = splitEmail.flatten.uniq
-  returnArr
-end
-
+	attr_accessor :emails
+	
+	def initialize(emails)
+		@emails= emails
+	end
+	
+	def parse
+		@emails = @emails.gsub(/[\s,]/ ," ").split
+		# @email is an array now
+		@emails.uniq
+	end
+	
 end
